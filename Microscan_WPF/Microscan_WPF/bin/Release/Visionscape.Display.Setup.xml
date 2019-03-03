@@ -1,0 +1,559 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Visionscape.Display.Setup</name>
+    </assembly>
+    <members>
+        <member name="T:Visionscape.Display.Setup.FileManager">
+            <summary>
+            Helps with the management of Visionscape AVP files
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.SetDevice(Visionscape.Devices.VsDevice)">
+            <summary>
+            Sets the current device to the specified Visionscape Device
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.DoAction(System.String,System.String,System.String)">
+            <summary>
+            Performs the specified file action
+            </summary>
+            <param name="opString">string that identifies the operation to perform:
+               "OpenJob", "SaveJob", "CloseJob", "NewJob")</param>
+            <param name="arg1">1st argument to the file operation: File path for OpenJob and SaveJob</param>
+            <param name="arg2">2nd argument to the file operation:  Not currently used</param>
+            <returns>true if the operation completed successfully</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.CloseJob(System.Boolean)">
+            <summary>
+            Closes the current Job, optionally asking if the user wants to save it first (if dirty)
+            </summary>
+            <param name="bAsk">If true, check if the job is dirty and ask user if they want to save the job if it is</param>
+            <returns>true if the job was closed, false if the user hit cancel when asked to save</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.CloseJob">
+            <summary>
+            Closes the current job, no questions asked.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.NeedSave">
+            <summary>
+            Returns true if the Job is "Dirty", meaning it needs to be saved.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.SaveJobAs">
+            <summary>
+            Launches the SaveAs operation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.SaveJob">
+            <summary>
+            Saves the current Job to the same path that was used to open it
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.SaveJob(System.String)">
+            <summary>
+            Saves the current job to the specified path
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.SaveJobIf">
+            <summary>
+            Checks if the Job nees to be saved, and if so, presents a dialog to ask the user if they want to save.
+            </summary>
+            <returns>true if the job was saved, false if not</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.NewJob">
+            <summary>
+            Launches the NewJob operation. 
+            Will ask if you want to save the current Job (if it's dirty), then closes it, 
+              and creates a new default Job (one Inspection with one Snapshot).
+            </summary>
+            <returns>true if the new Job was created successfully.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.OpenJob">
+            <summary>
+            Launches the OpenJob dialog, allowing user to select an AVP file, then loads that Job
+            </summary>
+            <returns>true if a Job was loaded successfully</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.FileManager.OpenJob(System.String)">
+            <summary>
+            Attempts to open the specified Job file.
+            </summary>
+            <param name="filePath">Path of the AVP file to open</param>
+            <returns>true if the Job was successfully loaded</returns>
+        </member>
+        <member name="P:Visionscape.Display.Setup.FileManager.Can">
+            <summary>
+            Returns a FileManagerCan object that identifies which operations "Can" be performed
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.FileManager.Job">
+            <summary>
+            Returns the embedded Job Step.  This contains the most recently loaded Job.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.FileManager.Device">
+            <summary>
+            Gets/Sets the Device being used by this Job
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.CheckIfTrigDlgNeeded">
+            <summary>
+            Check if the currently active snapshot step has a trigger.
+              If using triggers, we should display the "waiting for Trigger" dialog
+            </summary>
+            <param name="theStep"></param>
+            <returns>return true if we showed the message</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.GetItemForStep(Visionscape.Steps.Step)">
+            <summary>
+            Find the ListViewItem in the Step List that represents the specified Step
+            </summary>
+            <param name="theStep">The Step you are looking for</param>
+            <returns>The ListViewItem that represents the Step if found, else null</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.OptionTryoutIsOn(Visionscape.Display.Setup.SetupManagerTryoutOptions)">
+            <summary>
+            Returns true if the specified Tryout Option(s) is/are turned On
+            </summary>
+            <param name="op"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.OptionTryoutSet(Visionscape.Display.Setup.SetupManagerTryoutOptions,System.Boolean)">
+            <summary>
+            Turns the specified Tryout option on or off
+            </summary>
+            <param name="op">The option to be changed</param>
+            <param name="bSet">If true, turn the option on, if false, turn it off</param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.OptionIsOn(Visionscape.Display.Setup.SetupManagerOptions)">
+            <summary>
+            Returns true if the specified SetupManagerOptions parameter is turned on
+            </summary>
+            <param name="op">the option to check</param>
+            <returns>true if on, false if off</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.OptionSet(Visionscape.Display.Setup.SetupManagerOptions,System.Boolean)">
+            <summary>
+            Sets the specified SetupManagerOptions parameter either on or of
+            </summary>
+            <param name="op">The option to set</param>
+            <param name="bSet">if true, turn it on, if false, turn it off</param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.UpdateTrainButton(Visionscape.Steps.Step)">
+            <summary>
+            Updates the state of the Train button based on the specified Step
+            </summary>
+            <param name="theStep"></param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.OptionLayoutIsOn(Visionscape.Display.Setup.SetupManagerLayoutOptions)">
+            <summary>
+            Returns true if the specified Layout option is turned on.
+            </summary>
+            <param name="lo">The option to check</param>
+            <returns>true if on, false if off</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.OptionLayoutSet(Visionscape.Display.Setup.SetupManagerLayoutOptions,System.Boolean)">
+            <summary>
+            Sets the specified layout option either on or off
+            </summary>
+            <param name="lo">the option to set</param>
+            <param name="bSet">Turns the option on if true, off if false</param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.SelectStep(Visionscape.Steps.Step)">
+            <summary>
+            Selects the step in the control
+            </summary>
+            <param name="step">The step to select.</param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.WizardNext">
+            <summary>
+            Trys the current step, then moves to the next Step in the list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.WizardPrev">
+            <summary>
+            Moves to the previous step in the list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.SelectNextItemInList">
+            <summary>
+            Selects the next item in list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.SelectPrevItemInList">
+            <summary>
+            Selects the prev item in list.
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.Acquire">
+            <summary>
+            Acquires an image synchronously.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.AcquireWithTimeout(System.Int32)">
+            <summary>
+            Acquires an image synchronously, will timeout if the acquisition takes longer than the specified timeout value
+            </summary>
+            <param name="timeout">The timeout in milliseconds.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.AcquireStart">
+            <summary>
+            Start an acquistion asyncronously. Control is returned immediatly. 
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.AcquireStop">
+            <summary>
+            Stops an acquistion.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.AcquireActive">
+            <summary>
+            Returns True if an acquire is currently active.
+            </summary>
+            <returns>status of acquire.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.LiveVideoStart">
+            <summary>
+            Starts live video.
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.LiveVideoStop">
+            <summary>
+            Stops live video.
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.TryoutCurrentItem">
+            <summary>
+            Runs the currently selected item.
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.TryoutStart">
+            <summary>
+            Starts to run the steps asynchronously in a loop until TryoutStop is called.
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.TryoutStart(System.Int32)">
+            <summary>
+            Run tryout for specified number of iterations, then stop.
+            </summary>
+            <param name="nIterations">The number of iterations to run. 0 = run until stopped</param>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.TryoutOneCycle">
+            <summary>
+            Starts an asynchronous tryout that will run for one cycle and then stop.
+            </summary>
+            <returns><c>true</c> if started successfully.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.TryoutStop">
+            <summary>
+            Stops Tryout.
+            </summary>
+            <returns><c>true</c> if success.; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.TrainCurrentItem">
+            <summary>
+            Trains the currently selected step.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.UntrainCurrentItem">
+            <summary>
+            Untrains the current list item.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.ZoomIn">
+            <summary>
+            Zooms the image in.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.ZoomOut">
+            <summary>
+            Zooms the image out.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.ZoomAuto">
+            <summary>
+            Automatically fit image to display area.
+            </summary>f
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.ZoomOne">
+            <summary>
+            Zooms the image to a 1:1 Ratio.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.UpdateControlsForStep(Visionscape.Steps.Step,System.Boolean)">
+            <summary>
+            Update all of the controls to reflect the currently selected Step
+            </summary>
+            <param name="theStep">The step to update for</param>
+            <param name="bEndOfTryout">True if we're here because it is the end of a tryout operation </param>
+        </member>
+        <member name="F:Visionscape.Display.Setup.SetupManager.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.SetupManager.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.SelectedStep">
+            <summary>
+            Gets/Sets the Step that is currently selected in the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.ItemList">
+            <summary>
+            Read-Only: Returns a list of SetupItems, one for every Step displayed in the Step List of the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.RootStep">
+            <summary>
+            Use this property to Connect the Control to your Job.
+            Either Connects the control to the specified Step, or returns the Step it is already connected to.
+              This would typically be an Inspection Step, but it can be a VisionSystem or Snapshot step also.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.EmbeddedDatumGrid">
+            <summary>
+            Returns a reference to the embedded DatumGrid control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.EmbeddedBufMgr">
+            <summary>
+            Returns a reference to the embedded BufMgr control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.Can">
+            <summary>
+            Returns a SetupManagerCan object that will tell you what operations the control "Can" perform
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.ImageViewSize">
+            <summary>
+            Gets/Sets the distance of the splitter bar from the top or left of the image view,
+             Depending on orientation
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.ListViewSize">
+            <summary>
+            Gets/Sets the distance of the splitter bar from the left of the step list
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.OptionsTryout">
+            <summary>
+            Gets/Sets the options that control how tryouts are run
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.Options">
+            <summary>
+            Gets/Sets the current SetupManagerOptions bit field.
+            It is generally easier to use OptionIsOn() to get a value,
+             and OptionSet to set a value
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.OptionsLayout">
+            <summary>
+            Gets/Sets the SetupManagerLayoutOptions bit field that controls the layout of the control.
+            To check if specific layout options are turned on, use OptionLayoutIsOn()
+            To set a specific layout option on or off, use OptionLayoutSet()
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.IsCurrentItemTrained">
+            <summary>
+            Returns true if the currently selected list item is trained.
+            </summary>
+            <value>
+            	<c>true</c> if the current item is trained; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.IsCurrentItemTrainable">
+            <summary>
+            Returns true if the currently selected list item is trainable.
+            </summary>
+            <value>
+            	<c>true</c> if the current item is trainable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupManager.IsCurrentItemUntrainable">
+            <summary>
+            Returns true if the currently selected list item is untrainable.
+            </summary>
+            <value>
+            	<c>true</c> if the current item is untrainable; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Visionscape.Display.Setup.SetupManagerCan">
+            <summary>
+            The properties of this class identify which operations "Can" be performed
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Setup.StepTreeEditor.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.StepTreeEditor.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.StepTreeEditor.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.StepTreeEditor.EditStep(Visionscape.Steps.Step)">
+            <summary>
+            Identical to setting the RootStep property, Causes the specified Step and all
+            it's children to be displayed in the Tree.
+            </summary>
+            <param name="step"></param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.StepTreeEditor.RefreshTree">
+            <summary>
+            Forces the control to rebuild it's tree.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.StepTreeEditor.SelectStep(Visionscape.Steps.Step)">
+            <summary>
+            Selects the specified step in the tree
+            </summary>
+            <param name="step"></param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.StepTreeEditor.InsertStep(Visionscape.Display.Setup.InsertStepOption)">
+            <summary>
+            Launches the insert step dialog, allowing the user to select the type of Step
+            they want to add to the Job. The new Step is inserted relative to the currently selected Step.
+            </summary>
+            <param name="option">Relative to the currently Selected Step, specifies where the new Step should be inserted</param>
+        </member>
+        <member name="P:Visionscape.Display.Setup.StepTreeEditor.ShowDatumsInTree">
+            <summary>
+            If true, a list of all datums is displayed in the tree for each step
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.StepTreeEditor.RootStep">
+            <summary>
+            Gets/Sets the root Step of the control.  StepTreeEditor will display
+             the root Step and all of it's child Steps in the tree.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.StepTreeEditor.SelectedStep">
+            <summary>
+            Gets/Sets the Step that is currently selected in the Tree.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.StepTreeEditor.ShowDatums">
+            <summary>
+            Gets/Sets whether or not the Datum Page should be displayed
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.StepTreeEditor.SplitterDistance">
+            <summary>
+            Sets the distance from the left edge of the control to the splitter that separates the tree from the Datum Page
+            </summary>
+        </member>
+        <member name="T:Visionscape.Display.Setup.SetupResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Setup.SetupResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Setup.InsertStepOption.Into">
+            <summary>
+            Insert new Step at the end of this Steps child list
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Setup.InsertStepOption.After">
+            <summary>
+            Insert new Step immediately after this Step
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Setup.InsertStepOption.Before">
+            <summary>
+            Insert new Step immediately before this Step
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.Setup.FindRelatives(Visionscape.Steps.Step)">
+            <summary>
+            Find the relatives of the specified step, inspection and Snapshot 
+            </summary>
+            <param name="theStep"></param>
+        </member>
+        <member name="M:Visionscape.Display.Setup.Setup.FindActiveBuffer(Visionscape.Steps.Step,Visionscape.Steps.Step)">
+            <summary>
+            Finds the active buffer for the specified step. assumes the step is below a snapshot 
+            </summary>
+            <param name="theStep"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.Setup.Update">
+            <summary>
+            Updates all internal information based on the current root step
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.Tryout.TryWaitForComplete(System.Int32)">
+            <summary>
+            Waits for a TryStart call to complete
+            </summary>
+            <param name="timeout">Time in milliseconds to wait before timeing out. 0 = Wait forever</param>
+            <returns>Returns true if TryStart completed normally, false if we timed out</returns>
+        </member>
+        <member name="M:Visionscape.Display.Setup.Tryout.RunTryout">
+            <summary>
+            Handles our tryout run loop. This runs in a separate thread
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Setup.Tryout.OnHook(System.Int32,Visionscape.Steps.IComposite,System.Object)">
+            <summary>
+            The callback handler for each of our setup steps.
+             Handles notifications for pre and post execute of the step
+            </summary>
+            <param name="op">Identifies the operation we are being notified of. EnumHook defines possible values</param>
+            <param name="pComp">The composite object sendgin the notification</param>
+            <param name="pObjParam">Parameter data</param>
+        </member>
+    </members>
+</doc>

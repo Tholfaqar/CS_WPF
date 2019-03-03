@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Visionscape.Display.Devices</name>
+    </assembly>
+    <members>
+        <member name="M:Visionscape.Display.Devices.ToolStripDeviceDropdown.Init">
+            <summary>
+            Tells the control to update it's list of devices
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.ToolStripDeviceDropdown.Device">
+            <summary>
+            Returns the currently selected device. null if none is selected.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceDropdown.DeviceName(System.Int32)">
+            <summary>
+            Returns the name of the device at the specified index in the combo list
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceDropdown.ResetList">
+            <summary>
+            Forces the control to clear it's list and rebuild it
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Devices.DeviceDropdown.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceDropdown.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceDropdown.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceDropdown.Device">
+            <summary>
+            Gets/Sets the currently selected device in the list
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceDropdown.GroupId">
+            <summary>
+            Gets/Sets the current group ID
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceDropdown.AutoConnect">
+            <summary>
+            Gets/Sets the current AutoConnect State.
+            If true, whenever the selected device changes, the VsCoordinator OnDeviceFocus event will fire.
+             Other controls can look for this event and "Auto connect" to the selected device.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceDropdown.Enabled">
+            <summary>
+            Enables/Disables the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceDropdown.ListIndex">
+            <summary>
+            Gets/Sets the index of the currently selected device
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceDropdown.ListCount">
+            <summary>
+            Returns the number of items in the combo box list
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceButton.Update">
+            <summary>
+            Forces an update of the button
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButton.Selected">
+            <summary>
+            Returns true if this button is selected, false if not.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButton.Device">
+            <summary>
+            Returns the device represented by this button
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButton.DeviceName">
+            <summary>
+            The name of the device represented by this button
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButton.FakeEnabled">
+            <summary>
+            Gets/Sets whether button should be enabled when not attached to a device
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButton.IsEnabled">
+            <summary>
+            returns true if enabled, false if disabled
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButton.StateColor">
+            <summary>
+            Returns a color based on the current state of the button
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceButtonBar.SelectDevice(Visionscape.Devices.VsDevice)">
+            <summary>
+            Selects the specified device in the button bar
+            </summary>
+            <param name="dev"></param>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceButtonBar.UpdateAll">
+            <summary>
+            Forces an update of the button bar
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceButtonBar.AddDevice(Visionscape.Devices.VsDevice)">
+            <summary>
+            Adds a button for the specified device
+            </summary>
+            <param name="dev">The device you want to add a button for</param>
+            <returns>a reference to the newly created DeviceButton object</returns>
+        </member>
+        <member name="M:Visionscape.Display.Devices.DeviceButtonBar.RemoveDevice(Visionscape.Devices.VsDevice)">
+            <summary>
+            Removes the specified device from the button bar
+            </summary>
+            <param name="dev">The device you want to remove</param>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ColorDisabled">
+            <summary>
+            Gets/Sets the color to use for disabled buttons
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ColorEnabled">
+            <summary>
+            Gets/Sets the color to use for enabled buttons
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ColorSelected">
+            <summary>
+            Gets/Sets the color to use when a button is selected
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ButtonMargin">
+            <summary>
+            Gets/Sets the margin between buttons
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ButtonPadding">
+            <summary>
+            Gets/sets the padding between buttons
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ButtonFont">
+            <summary>
+            Gets/Sets the font to use for all button text
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ButtonWidth">
+            <summary>
+            Gets/Sets the width of all buttons
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Devices.DeviceButtonBar.ButtonHeight">
+            <summary>
+            Gets/Sets the Height of all buttons
+            </summary>
+        </member>
+    </members>
+</doc>

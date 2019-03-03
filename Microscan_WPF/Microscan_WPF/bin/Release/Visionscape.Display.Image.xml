@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Visionscape.Display.Image</name>
+    </assembly>
+    <members>
+        <member name="M:Visionscape.Display.Image.Filmstrip.NewBufferDm(Visionscape.Steps.BufferDm)">
+            <summary>
+            Adds a new image to the filmstrip
+            </summary>
+            <param name="buf">A BufferDm object containing the image to add to the filmstrip</param>
+        </member>
+        <member name="M:Visionscape.Display.Image.Filmstrip.NewBufferDm(Visionscape.Steps.BufferDm,System.Boolean)">
+            <summary>
+            Adds a new image to the filmstrip, and draws either a red or green border around it, depending on the value of the bPassed parameter.
+            </summary>
+            <param name="buf">A BufferDm containing the image to add to the filmstrip</param>
+            <param name="bPassed">If true, a green border is drawn, if false, a red border is drawn</param>
+        </member>
+        <member name="F:Visionscape.Display.Image.Filmstrip.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Image.Filmstrip.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Image.Filmstrip.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Visionscape.Display.Win32">
+            <author>Shrijeet Nair</author>
+        </member>
+        <member name="F:Visionscape.Display.Image.BufferView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.OpenImage(System.String)">
+            <summary>
+            Opens either a TIF or BMP file and displays it in the control
+            </summary>
+            <param name="strFilename">Path to the image file</param>
+            <returns>true if loaded successfully</returns>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.ScrollTo(System.Int32,System.Int32)">
+            <summary>
+            Scrolls the image such that the upper-left corner of the view will be at the specified x and y pixel location in the image
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.ZoomIn">
+            <summary>
+            Zooms the image in by increasing the scale by a factor of 2.  
+             Has no effect if AutoZoom is true 
+            </summary>
+            <returns>The resulting scale factor</returns>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.ZoomOut">
+            <summary>
+            Zooms the image out by decreasing the scale by a factor of 2. 
+             Has no effect if AutoZoom is true.
+            </summary>
+            <returns>The resulting scale factor</returns>
+        </member>
+        <member name="M:Visionscape.Display.Image.BufferView.ZoomTo(System.Int32,System.Int32)">
+            <summary>
+            Zooms the image to the specified scale factor, as specified by the numerator and denominator parameters.  
+            Has no effect if AutoZoom is true
+            </summary>
+            <param name="scaleNumerator">numerator of the scale factor</param>
+            <param name="scaleDenominator">denominator of the scale factor</param>
+            <returns>resulting scale factor</returns>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.Buffer">
+            <summary>
+            Display an image by assigning this property to a BufferDm
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.AutoZoom">
+            <summary>
+            When true, the image will be automatically zoomed to fit into the bounds of the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.ScrollPositionX">
+            <summary>
+            Gets/Sets the X position of the image at the upper left of the view
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.ScrollPositionY">
+            <summary>
+            Gets/Sets the Y position of the image at the upper left of the view
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.ShowStatusBar">
+            <summary>
+            Shows/Hides the status bar at the bottom of the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.ZoomFactor">
+            <summary>
+            Gets/Sets the current zoom factor
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Image.BufferView.BackColor">
+            <summary>
+            Gets/Sets the Background color of the control
+            </summary>
+        </member>
+    </members>
+</doc>

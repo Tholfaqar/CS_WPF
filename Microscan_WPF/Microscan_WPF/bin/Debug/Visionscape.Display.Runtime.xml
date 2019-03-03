@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Visionscape.Display.Runtime</name>
+    </assembly>
+    <members>
+        <member name="F:Visionscape.Display.Runtime.QueueList.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.QueueList.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.QueueList.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Visionscape.Display.Runtime.Resource1">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Runtime.Resource1.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Runtime.Resource1.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Runtime.QueueView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.QueueView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.QueueView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.QueueView.SaveAllImages(System.String,Visionscape.Steps.EnumImgFileType,System.Boolean)">
+            <summary>
+            Saves all of the images in the InspectionReportList to disk.  File names are assigned automatically.
+             File Name format is: InspectionSymbolicName_snapshotindex_cyclecount
+            </summary>
+            <param name="strFolder">The folder where the images should be saved</param>
+            <param name="fType">Specifies the type of image to save, TIF or BMP</param>
+            <param name="bDisplayFirstFileName">If true, a dialog will display the name of the first image file to be saved</param>
+            <returns>true if saved successfully</returns>
+        </member>
+        <member name="P:Visionscape.Display.Runtime.QueueView.Reports">
+            <summary>
+            Gets/Sets the InspectionReportList that is displayed by the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Runtime.QueueView.SnapIndex">
+            <summary>
+            Gets/Sets the index of the Snapshot being displayed in the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Runtime.QueueView.ShowToolbar">
+            <summary>
+            Gets/Sets the visibility of the control toolbar
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Runtime.ImageThumb.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.ImageThumb.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Runtime.ImageThumb.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

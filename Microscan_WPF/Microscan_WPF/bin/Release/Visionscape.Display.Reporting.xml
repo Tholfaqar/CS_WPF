@@ -1,0 +1,348 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Visionscape.Display.Reporting</name>
+    </assembly>
+    <members>
+        <member name="F:Visionscape.Display.Reporting.IOTriggerControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Reporting.ResultsView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.ResultsView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.ResultsView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.Report">
+            <summary>
+            Gets/Sets the InspectionReport containing the results to be displayed by the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.GridAutoSize">
+            <summary>
+            Autosize the width of the grid cells to fit the displayed data
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.CalibratedValuesEnabled">
+            <summary>
+            When true, the control will display calibrated values.  If false, all values are displayed in pixels
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.PrecisionPix">
+            <summary>
+            Gets/Sets the number of decimal places used when displaying pixel floating point values
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.PrecisionWorld">
+            <summary>
+            Gets/Sets the number of decimal places used when displaying world (calibrated) floating point values
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.NumStatsDms">
+            <summary>
+            The number of StatisticDms currently being displayed 
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.NumResults">
+            <summary>
+            Total number of results currently being displayed
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ResultsView.NumTimerDms">
+            <summary>
+            The number of timer datums currently being displayed
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Reporting.StatsView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.StatsView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.StatsView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.StatsView.Report">
+            <summary>
+            Gets/Sets the InspectionReport containing the inspection Stats to be displayed by the control
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerView.UpdateAll">
+            <summary>
+            Forces all trigger controls to update
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerView.Connect(Visionscape.Devices.VsDevice)">
+            <summary>
+            Connects this control to the specified Visionscape Device
+            </summary>
+            <param name="dev">The Visionscape Device to connect to</param>
+            <returns>true if connection was successful</returns>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerView.Disconnect">
+            <summary>
+            Disconnects the control from the Device passed to the Connect() method
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerView.IsConnected">
+            <summary>
+            Returns true if currently connected to a Device
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Visionscape.Display.Reporting.IOTriggerView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOTriggerView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ColorOff">
+            <summary>
+            Color used when IO point is off
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ColorOn">
+            <summary>
+            Color used when IO point is on
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ColorDisabled">
+            <summary>
+            Color to use when disabled
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ButtonMargin">
+            <summary>
+            Gets/Sets the margin between trigger controls
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ButtonFont">
+            <summary>
+            Gets/Sets the font used to display button text
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ColorFontOn">
+            <summary>
+            Color of text when IO point is On
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ColorFontOff">
+            <summary>
+            Color of text when IO point is Off
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.ColorFontDisabled">
+            <summary>
+            Color of text when control is disabled
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.CanStartText">
+            <summary>
+            The text to display when the button is properly configured and the trigger control is ready to be started
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.NeedPointText">
+            <summary>
+            The text to display when an IO point has not been assigned, and the trigger control can not be started
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.NotConnectedText">
+            <summary>
+            Text to display when a trigger control is not connected
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.IOConnection">
+            <summary>
+            Returns the IOConnection object used by this control
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOTriggerView.NumTriggers">
+            <summary>
+            Gets/Sets the number of trigger controls to display
+            </summary>
+        </member>
+        <member name="F:Visionscape.Display.Reporting.ReportView.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.ReportView.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.ReportView.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.ReportView.ClearCounts">
+            <summary>
+            Sets the displayed counter values to 0
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ReportView.Report">
+            <summary>
+            Gets/Sets the InspectionReport that is currently being displayed by the control. 
+             Set to null if you want to clear the display
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ReportView.PrecisionPix">
+            <summary>
+            Gets/Sets the number of decimal places that should be used when displaying pixel floating point values
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ReportView.PrecisionWorld">
+            <summary>
+            Gets/Sets the number of decimal places that should be used when displaying world(calibrated) floating point values
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.ReportView.CalibratedValuesEnabled">
+            <summary>
+            When true, the control will display calibrated values.  If false, all values are displayed in pixels
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOButton.IONumber">
+            <summary>
+            Gets/Sets the number of IO points to display in the control
+            </summary>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOView.SetIOPoint(System.Int32,System.Boolean)">
+            <summary>
+            Sets the specified IO Point to the state specified by the bOn parameter
+            </summary>
+            <param name="ioNum">1 based index of the IO point to set</param>
+            <param name="bOn">if true, IO point is turned On, if false, it is turned Off</param>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOView.Connect(Visionscape.Devices.VsDevice)">
+            <summary>
+            Connects the control to the specified Visionscape Device.
+            The control is not functional until you have successfully connected.
+            </summary>
+            <param name="dev">The Device to connect to</param>
+            <returns>true if successfully connected</returns>
+        </member>
+        <member name="M:Visionscape.Display.Reporting.IOView.Disconnect">
+            <summary>
+            Disconnects the control from the current Device
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.IOCount">
+            <summary>
+            Gets/Sets the number of Virtual IO points to display in the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.IOFirst">
+            <summary>
+            Gets/Sets the 1 based index of the first Virtual IO point to display in the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ColorOff">
+            <summary>
+            Color used when an IO point is Off
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ColorOn">
+            <summary>
+            Color used when an IO point is On
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ColorDisabled">
+            <summary>
+            Color used when the control is disabled
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ButtonMargin">
+            <summary>
+            Gets/Sets the margin between buttons
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ButtonWidth">
+            <summary>
+            Gets/Sets the width of an IO button
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ButtonHeight">
+            <summary>
+            Gets/Sets the height of an IO button
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ButtonFont">
+            <summary>
+            Gets/Sets the Font used to display button text
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ColorFontOn">
+            <summary>
+            Gets/Sets the color of the button text when a button is On
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ColorFontOff">
+            <summary>
+            Gets/Sets the color of the button text when a button is Off
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.ColorFontDisabled">
+            <summary>
+            Gets/Sets the color of the button text when the control is disabled
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.IOConnection">
+            <summary>
+            Returns a reference to the IOConnection object used by the control
+            </summary>
+        </member>
+        <member name="P:Visionscape.Display.Reporting.IOView.IsConnected">
+            <summary>
+            Returns true if the control is connected to a device
+            </summary>
+        </member>
+    </members>
+</doc>
